@@ -35,6 +35,13 @@ def create_app() -> FastAPI:
     )
 
     # -------------------------
+    # Root Route (for Vercel check)
+    # -------------------------
+    @app.get("/", tags=["Root"])
+    def root():
+        return {"message": "Backend is running on Vercel!"}
+
+    # -------------------------
     # Existing API Routers
     # -------------------------
     # Example:
